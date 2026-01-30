@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bax2itdyeuvw5"]
+
+[ext_resource type="Script" uid="uid://r5130gc54bia" path="res://TestScript.cs" id="2_vyld7"]
+
+[node name="Niveau" type="Node2D" unique_id=2102243283]
+
+[node name="TestScript" type="Node2D" parent="." unique_id=611171339]
+script = ExtResource("2_vyld7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1761679607]
