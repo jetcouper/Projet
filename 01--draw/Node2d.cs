@@ -36,7 +36,7 @@ public partial class Node2d : Node2D
             1.0f
         );
 
-        //Bouche
+        //Bouche vecteur
         DrawArc(new Vector2(0, 0), 100, Mathf.Pi * 0.25f, Mathf.Pi * 0.75f, 10, Colors.Blue, 10.0f);
     }
 
