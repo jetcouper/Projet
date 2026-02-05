@@ -4,6 +4,8 @@ using Godot;
 public partial class Node2d : Node2D
 {
     private Vector2 posBiscuit = new Vector2(0 + 50, 0 + 50);
+    private bool boucheDoitOuvrir = true;
+    private float bouche = Mathf.Pi / 4f;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready() { }
@@ -24,21 +26,21 @@ public partial class Node2d : Node2D
 
         DrawCircle(posBiscuit, 100.0f, Colors.Chocolate, true, -1, false);
         DrawRect(
-            new Rect2(new Vector2(0 + 20, 0 + 20), new Vector2(0 + 20, 0 + 20)),
+            new Rect2(new Vector2(posBiscuit.X + 20, 0 + 20), new Vector2(0 + 20, 0 + 20)),
             Colors.Brown,
             true,
             -1,
             false
         );
         DrawRect(
-            new Rect2(new Vector2(0 + 70, 0 + 70), new Vector2(0 + 20, 0 + 20)),
+            new Rect2(new Vector2(posBiscuit.X + 70, 0 + 70), new Vector2(0 + 20, 0 + 20)),
             Colors.Brown,
             true,
             -1,
             false
         );
         DrawRect(
-            new Rect2(new Vector2(0 + 20, 0 + 65), new Vector2(0 + 20, 0 + 20)),
+            new Rect2(new Vector2(posBiscuit.X + 20, 0 + 65), new Vector2(0 + 20, 0 + 20)),
             Colors.Brown,
             true,
             -1,
@@ -57,9 +59,28 @@ public partial class Node2d : Node2D
 
         //Pacman
         Vector2 posPac = new(400, 100);
-        const float anglePac = Mathf.Pi * 0.25f;
-        DrawArc(posPac, 50, anglePac, 2 * -Mathf.Pi * 0.75f, 30, Colors.Yellow, 100.0f);
-        DrawCircle(new Vector2(450, 100), 10, Colors.Black, true, -1, false);
+
+        if (boucheDoitOuvrir)
+        {
+            bouche += 0.05f;
+            if (bouche >= Mathf.Pi / 2f)
+            {
+                boucheDoitOuvrir = false;
+            }
+        }
+        else
+        {
+            bouche -= 0.05f;
+            if (bouche <= 0f)
+            {
+                boucheDoitOuvrir = true;
+            }
+        }
+        float debutAngle = bouche / 2f;
+        float finAngle = 2 * Mathf.Pi - debutAngle;
+
+        DrawArc(posPac, 50, debutAngle, finAngle, 60, Colors.Yellow, 100.0f);
+        DrawCircle(posPac + new Vector2(15, -30), 5, Colors.Black);
     }
 
     public override void _Process(double delta)
