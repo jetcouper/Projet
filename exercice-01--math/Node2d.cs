@@ -1,23 +1,30 @@
 using System;
 using Godot;
 
+/// <summary>
+/// Auteur: Antoine Dextraze
+/// Date : 2026-02-10
+/// Description : Les dessins.
+/// </summary>
 public partial class Node2d : Node2D
 {
     private Vector2 posBiscuit = new Vector2(50, 50);
-    private Vector2 posPac = new(400, 100);
-    private Vector2 currentInputVector = new(0, 0);
-
-    [ExportGroup("Biscuit")]
-    private float vitesseMouvement = 100.0f;
 
     [ExportGroup("PacMan")]
     [Export]
+    private Vector2 posPac = new(400, 100);
+    private Vector2 currentInputVector = new(0, 0);
+    private float vitesseMouvement = 200.0f;
     private float frequenceFermeture = 2.0f;
 
+    [ExportGroup("Debug")]
     [Export]
-    private float angleRadPacManAmplitude = Mathf.Pi * 0.1f;
+    private bool nezAff = false;
 
-    [Export]
+    [ExportGroup("Biscuit")]
+    private float vitesseMouvementBiscuit = 100.0f;
+
+    private float angleRadPacManAmplitude = Mathf.Pi * 0.1f;
     private float angleRadPacManAmplitudeDecalage = Mathf.Pi * 0.1f;
 
     // Called when the node enters the scene tree for the first time.
@@ -106,6 +113,32 @@ public partial class Node2d : Node2D
             100.0f
         );
         DrawCircle(posPac + new Vector2(-5, -30), 10, Colors.Black);
+
+        float ligneDepasse = 5.0f;
+        float longueurLigne = 25.0f;
+        if (nezAff)
+        {
+            DrawLine(
+                new Vector2(-ligneDepasse, 0.0f),
+                new Vector2(longueurLigne, 0.0f),
+                Colors.Red,
+                1.0f
+            );
+            DrawLine(
+                new Vector2(0.0f, -ligneDepasse),
+                new Vector2(0.0f, longueurLigne),
+                Colors.Green,
+                1.0f
+            );
+        }
+        //Vector2 longueur = posPac + posBiscuit;
+        //DrawDashedLine(posPac, posBiscuit, Colors.Blue, 3.0f);
+
+        Vector2 pacManVersBiscuit = posBiscuit - posPac;
+
+        Vector2 pacManVersBiscuitNormalise = pacManVersBiscuit.Normalized(); //Pytagore
+        Vector2 ligneVersBiscuit = pacManVersBiscuitNormalise * 100.0f; //Fait 1 * 100
+        DrawDashedLine(posPac, posPac + ligneVersBiscuit, Colors.Blue, 5.0f);
     }
 
     public override void _Process(double delta)
@@ -115,6 +148,11 @@ public partial class Node2d : Node2D
         QueueRedraw();
         //Lecture des touches dans process (correspond à quand l'écran s'affiche)
         currentInputVector = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+
+        if (Input.IsActionJustPressed("ui_accept"))
+        {
+            nezAff = !nezAff;
+        }
     }
 
     public override void _PhysicsProcess(double delta)
@@ -122,7 +160,14 @@ public partial class Node2d : Node2D
         base._PhysicsProcess(delta);
         //On multiplie toujours les vitesses par delta qui est la durée depuis la
         // dernier appel de fonction
-        //posBiscuit += currentInputVector * vitesseMouvement * (float)delta;
-        posPac += currentInputVector * vitesseMouvement * (float)delta;
+        posBiscuit += currentInputVector * vitesseMouvement * (float)delta;
+
+        //Chasse sur le biscuit
+        Vector2 pacManVersBiscuit = posBiscuit - posPac;
+        Vector2 pacManVersBiscuitNormalise = pacManVersBiscuit.Normalized(); //Pytagore
+        Vector2 ligneVersBiscuit =
+            pacManVersBiscuitNormalise * vitesseMouvementBiscuit * (float)delta; //Fait 1 * 100
+
+        posPac += ligneVersBiscuit;
     }
 }

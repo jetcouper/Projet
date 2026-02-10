@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://3cajfvhct0qp"]
+
+[ext_resource type="Script" uid="uid://c7guhbe6w84bu" path="res://Niveau.cs" id="1_tfidw"]
+[ext_resource type="Texture2D" uid="uid://ckgv35wgclqwe" path="res://Fantasy Forest 1/bg_color_dark2.png" id="2_rdljv"]
+[ext_resource type="Texture2D" uid="uid://cqd6bwdnl04ey" path="res://Fantasy Forest 1/bg_color_dark1.png" id="3_envun"]
+[ext_resource type="Texture2D" uid="uid://ens4dvrjkj62" path="res://Fantasy Forest 1/bg_color.png" id="4_1cxmt"]
+[ext_resource type="Texture2D" uid="uid://dv75bk62465fn" path="res://Fantasy Forest 1/ground3.png" id="5_uug7y"]
+[ext_resource type="Texture2D" uid="uid://d4oka4cnpq1a" path="res://Fantasy Forest 1/ground4.png" id="6_tetol"]
+[ext_resource type="Texture2D" uid="uid://ca7v1mxyowe1y" path="res://Fantasy Forest 1/ground9.png" id="7_i38l0"]
+[ext_resource type="Texture2D" uid="uid://d1omplai72l0p" path="res://Fantasy Forest 1/m_pillar2.png" id="8_3gv2h"]
+[ext_resource type="Texture2D" uid="uid://bdhbm5kuv81dg" path="res://Fantasy Forest 1/m_pillar4.png" id="9_4q20l"]
+[ext_resource type="Texture2D" uid="uid://cbnw554ma48qs" path="res://Fantasy Forest 1/tree5.png" id="10_qhj12"]
+[ext_resource type="Texture2D" uid="uid://bppvbymmhgly6" path="res://Fantasy Forest 1/pillar1.png" id="11_rgppx"]
+[ext_resource type="Texture2D" uid="uid://cso5fhdjhi2i0" path="res://Fantasy Forest 1/ruin3.png" id="12_dvygp"]
+[ext_resource type="Texture2D" uid="uid://b8k5b23rl2yx5" path="res://Fantasy Forest 1/tree1.png" id="13_iwi2t"]
+[ext_resource type="Texture2D" uid="uid://ce8qvliji0t4h" path="res://Fantasy Forest 1/tree2.png" id="14_3vec1"]
+[ext_resource type="Texture2D" uid="uid://2bqpat4w87ri" path="res://Fantasy Forest 1/bush3.png" id="15_bvsml"]
+[ext_resource type="Texture2D" uid="uid://pm6xrnhwrv7i" path="res://Fantasy Forest 1/mushroom1.png" id="16_qhj12"]
+[ext_resource type="Texture2D" uid="uid://tr1ef2y5jda" path="res://Fantasy Forest 1/mushroom2.png" id="17_rgppx"]
+[ext_resource type="Texture2D" uid="uid://c7xfi3wrhwl3g" path="res://Fantasy Forest 1/tree3.png" id="18_dvygp"]
+[ext_resource type="Script" uid="uid://cmkytbfjww7ix" path="res://Library/Exemple/ExempleTween.cs" id="19_iwi2t"]
+
+[node name="Niveau" type="Node2D" unique_id=217031011]
+script = ExtResource("1_tfidw")
+
+[node name="ArrierePlan" type="Node2D" parent="." unique_id=1080597487]
+
+[node name="Ciel" type="Node2D" parent="ArrierePlan" unique_id=1787948408]
+
+[node name="BgColorDark7" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=1472283827]
+position = Vector2(-475, -42)
+scale = Vector2(1.9135803, 1.3894472)
+texture = ExtResource("2_rdljv")
+
+[node name="BgColorDark8" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=2062917592]
+position = Vector2(-488, 63)
+scale = Vector2(1.9135803, 1.3894472)
+texture = ExtResource("2_rdljv")
+
+[node name="BgColorDark9" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=1990200396]
+position = Vector2(-30.499966, 51.875008)
+scale = Vector2(2.0802467, 1.4987438)
+texture = ExtResource("2_rdljv")
+
+[node name="BgColorDark11" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=21514218]
+position = Vector2(199, 55)
+scale = Vector2(1.9506173, 1.3894472)
+texture = ExtResource("2_rdljv")
+
+[node name="BgColorDark12" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=463625572]
+position = Vector2(475.5, 75)
+scale = Vector2(2.3395061, 1.3894472)
+texture = ExtResource("2_rdljv")
+
+[node name="BgColorDark10" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=2011824151]
+position = Vector2(-265, 64)
+scale = Vector2(1.9135803, 1.3894472)
+texture = ExtResource("2_rdljv")
+
+[node name="BgColorDark1" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=1286154505]
+position = Vector2(-493, -201)
+scale = Vector2(1.6032258, 1.515)
+texture = ExtResource("3_envun")
+
+[node name="BgColorDark6" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=508765209]
+position = Vector2(522, -248)
+scale = Vector2(1.6032258, 1.515)
+texture = ExtResource("3_envun")
+
+[node name="BgColorDark2" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=447165630]
+position = Vector2(-118, -272)
+scale = Vector2(1.6032258, 1.515)
+texture = ExtResource("3_envun")
+
+[node name="BgColorDark4" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=1354403129]
+position = Vector2(334, -258)
+scale = Vector2(1.6032258, 1.515)
+texture = ExtResource("3_envun")
+
+[node name="BgColorDark3" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=1036016575]
+position = Vector2(-288, -254)
+scale = Vector2(1.6032258, 1.515)
+texture = ExtResource("3_envun")
+
+[node name="BgColorDark5" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=2060439060]
+position = Vector2(189, -262)
+scale = Vector2(1.6032258, 1.515)
+texture = ExtResource("3_envun")
+
+[node name="Sprite2D" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=1081999122]
+position = Vector2(-362.99997, -167)
+scale = Vector2(1.5465838, 1.5695066)
+texture = ExtResource("4_1cxmt")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=425212006]
+position = Vector2(-148, -89)
+scale = Vector2(2.0776396, 1.8834081)
+texture = ExtResource("4_1cxmt")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=1449982563]
+position = Vector2(49.000004, -193)
+scale = Vector2(2.4006212, 1.941704)
+texture = ExtResource("4_1cxmt")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=809701591]
+position = Vector2(210.00002, -126)
+scale = Vector2(2.0465837, 1.9461884)
+texture = ExtResource("4_1cxmt")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=1513363111]
+position = Vector2(461.37503, -156)
+scale = Vector2(2.740683, 2.116592)
+texture = ExtResource("4_1cxmt")
+
+[node name="Sol" type="Node2D" parent="ArrierePlan" unique_id=250418020]
+
+[node name="Ground3" type="Sprite2D" parent="ArrierePlan/Sol" unique_id=384638564]
+position = Vector2(-426.25, 217)
+scale = Vector2(1.3651686, 1)
+texture = ExtResource("5_uug7y")
+
+[node name="Ground4" type="Sprite2D" parent="ArrierePlan/Sol" unique_id=8741324]
+position = Vector2(-177, 223)
+scale = Vector2(1.3651686, 1)
+texture = ExtResource("5_uug7y")
+
+[node name="Ground5" type="Sprite2D" parent="ArrierePlan/Sol" unique_id=898862368]
+position = Vector2(96, 224)
+scale = Vector2(1.3651686, 1)
+texture = ExtResource("5_uug7y")
+
+[node name="Ground6" type="Sprite2D" parent="ArrierePlan/Sol" unique_id=364583013]
+position = Vector2(418.75, 214)
+scale = Vector2(1.553232, 1)
+texture = ExtResource("6_tetol")
+
+[node name="Ground9" type="Sprite2D" parent="ArrierePlan/Sol" unique_id=818327253]
+position = Vector2(-414.5, 298.75)
+scale = Vector2(1.4250871, 1.0591397)
+texture = ExtResource("7_i38l0")
+
+[node name="Ground10" type="Sprite2D" parent="ArrierePlan/Sol" unique_id=424519823]
+position = Vector2(-72.375015, 295.75)
+scale = Vector2(1.3614984, 1.2204299)
+texture = ExtResource("7_i38l0")
+
+[node name="Ground11" type="Sprite2D" parent="ArrierePlan/Sol" unique_id=1292843263]
+position = Vector2(255.99995, 307)
+rotation = -0.06188493
+scale = Vector2(1.3614984, 1.2204299)
+texture = ExtResource("7_i38l0")
+
+[node name="Ground12" type="Sprite2D" parent="ArrierePlan/Sol" unique_id=171171868]
+position = Vector2(454.52997, 288.4957)
+rotation = -0.040082082
+scale = Vector2(1.0430746, 1.3208259)
+texture = ExtResource("7_i38l0")
+
+[node name="Deco" type="Node2D" parent="ArrierePlan" unique_id=1323710108]
+
+[node name="MPillar2" type="Sprite2D" parent="ArrierePlan/Deco" unique_id=1598977939]
+position = Vector2(269, 147)
+texture = ExtResource("8_3gv2h")
+
+[node name="MPillar4" type="Sprite2D" parent="ArrierePlan/Deco" unique_id=467672086]
+position = Vector2(-506, 167)
+texture = ExtResource("9_4q20l")
+
+[node name="Tree5" type="Sprite2D" parent="ArrierePlan/Deco" unique_id=1141541358]
+position = Vector2(443, 50)
+texture = ExtResource("10_qhj12")
+
+[node name="Pillar1" type="Sprite2D" parent="ArrierePlan/Deco" unique_id=865801858]
+position = Vector2(350, 230)
+texture = ExtResource("11_rgppx")
+
+[node name="Ruin3" type="Sprite2D" parent="ArrierePlan/Deco" unique_id=670377964]
+position = Vector2(-217, 79)
+texture = ExtResource("12_dvygp")
+
+[node name="Tree1" type="Sprite2D" parent="ArrierePlan/Deco" unique_id=2032109580]
+position = Vector2(84, -58)
+texture = ExtResource("13_iwi2t")
+
+[node name="Tree2" type="Sprite2D" parent="ArrierePlan/Deco" unique_id=266607351]
+position = Vector2(-527, -37)
+texture = ExtResource("14_3vec1")
+
+[node name="Bush3" type="Sprite2D" parent="ArrierePlan/Deco" unique_id=1532177762]
+position = Vector2(-342.99997, 213.00002)
+scale = Vector2(1.2927928, 1.1741573)
+texture = ExtResource("15_bvsml")
+
+[node name="Mushroom1" type="Sprite2D" parent="ArrierePlan/Deco" unique_id=2011767691]
+position = Vector2(-76, 227)
+texture = ExtResource("16_qhj12")
+
+[node name="Mushroom2" type="Sprite2D" parent="ArrierePlan/Deco" unique_id=405344331]
+position = Vector2(-448, 228)
+texture = ExtResource("17_rgppx")
+
+[node name="ExempleTween" type="Sprite2D" parent="ArrierePlan" unique_id=79341366 node_paths=PackedStringArray("node")]
+modulate = Color(1, 0.30588236, 1, 1)
+position = Vector2(-161, 86)
+texture = ExtResource("18_dvygp")
+script = ExtResource("19_iwi2t")
+node = NodePath(".")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=68231517]
