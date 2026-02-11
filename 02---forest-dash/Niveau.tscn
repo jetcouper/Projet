@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://3cajfvhct0qp"]
 
 [ext_resource type="Script" uid="uid://c7guhbe6w84bu" path="res://Niveau.cs" id="1_tfidw"]
+[ext_resource type="Script" uid="uid://c3uvep8hrqfwy" path="res://TweekBackground.cs" id="2_iwi2t"]
 [ext_resource type="Texture2D" uid="uid://ckgv35wgclqwe" path="res://Fantasy Forest 1/bg_color_dark2.png" id="2_rdljv"]
 [ext_resource type="Texture2D" uid="uid://cqd6bwdnl04ey" path="res://Fantasy Forest 1/bg_color_dark1.png" id="3_envun"]
 [ext_resource type="Texture2D" uid="uid://ens4dvrjkj62" path="res://Fantasy Forest 1/bg_color.png" id="4_1cxmt"]
@@ -25,7 +26,10 @@ script = ExtResource("1_tfidw")
 
 [node name="ArrierePlan" type="Node2D" parent="." unique_id=1080597487]
 
-[node name="Ciel" type="Node2D" parent="ArrierePlan" unique_id=1787948408]
+[node name="Ciel" type="Node2D" parent="ArrierePlan" unique_id=1787948408 node_paths=PackedStringArray("node")]
+position = Vector2(-34, 29)
+script = ExtResource("2_iwi2t")
+node = NodePath(".")
 
 [node name="BgColorDark7" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=1472283827]
 position = Vector2(-475, -42)
@@ -33,83 +37,83 @@ scale = Vector2(1.9135803, 1.3894472)
 texture = ExtResource("2_rdljv")
 
 [node name="BgColorDark8" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=2062917592]
-position = Vector2(-488, 63)
-scale = Vector2(1.9135803, 1.3894472)
+position = Vector2(-567, 71)
+scale = Vector2(2.8888888, 2.0502512)
 texture = ExtResource("2_rdljv")
 
 [node name="BgColorDark9" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=1990200396]
-position = Vector2(-30.499966, 51.875008)
-scale = Vector2(2.0802467, 1.4987438)
+position = Vector2(-104.499985, 51.875008)
+scale = Vector2(2.993827, 1.4987438)
 texture = ExtResource("2_rdljv")
 
 [node name="BgColorDark11" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=21514218]
-position = Vector2(199, 55)
-scale = Vector2(1.9506173, 1.3894472)
+position = Vector2(236.5, 55)
+scale = Vector2(2.993827, 1.3894472)
 texture = ExtResource("2_rdljv")
 
 [node name="BgColorDark12" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=463625572]
-position = Vector2(475.5, 75)
-scale = Vector2(2.3395061, 1.3894472)
+position = Vector2(533.5, 115.375)
+scale = Vector2(3.0555553, 1.7952262)
 texture = ExtResource("2_rdljv")
 
 [node name="BgColorDark10" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=2011824151]
-position = Vector2(-265, 64)
-scale = Vector2(1.9135803, 1.3894472)
+position = Vector2(-333.50003, 105.875015)
+scale = Vector2(2.7592595, 1.8103017)
 texture = ExtResource("2_rdljv")
 
 [node name="BgColorDark1" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=1286154505]
-position = Vector2(-493, -201)
-scale = Vector2(1.6032258, 1.515)
+position = Vector2(-622.875, -249.25)
+scale = Vector2(3.2790322, 1.9975001)
 texture = ExtResource("3_envun")
 
 [node name="BgColorDark6" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=508765209]
-position = Vector2(522, -248)
-scale = Vector2(1.6032258, 1.515)
+position = Vector2(554.375, -266.75)
+scale = Vector2(2.0209675, 1.7025)
 texture = ExtResource("3_envun")
 
 [node name="BgColorDark2" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=447165630]
-position = Vector2(-118, -272)
-scale = Vector2(1.6032258, 1.515)
+position = Vector2(-118, -302.75)
+scale = Vector2(1.6032258, 1.8225001)
 texture = ExtResource("3_envun")
 
 [node name="BgColorDark4" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=1354403129]
-position = Vector2(334, -258)
-scale = Vector2(1.6032258, 1.515)
+position = Vector2(334, -285.25)
+scale = Vector2(1.6032258, 1.7875)
 texture = ExtResource("3_envun")
 
 [node name="BgColorDark3" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=1036016575]
-position = Vector2(-288, -254)
-scale = Vector2(1.6032258, 1.515)
+position = Vector2(-288, -287.25)
+scale = Vector2(1.6032258, 1.8475)
 texture = ExtResource("3_envun")
 
 [node name="BgColorDark5" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=2060439060]
-position = Vector2(189, -262)
-scale = Vector2(1.6032258, 1.515)
+position = Vector2(189, -299.25)
+scale = Vector2(1.6032258, 1.8875)
 texture = ExtResource("3_envun")
 
 [node name="Sprite2D" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=1081999122]
-position = Vector2(-362.99997, -167)
-scale = Vector2(1.5465838, 1.5695066)
+position = Vector2(-419.25, -245)
+scale = Vector2(2.2453418, 2.2690582)
 texture = ExtResource("4_1cxmt")
 
 [node name="Sprite2D2" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=425212006]
-position = Vector2(-148, -89)
+position = Vector2(-187, -210)
 scale = Vector2(2.0776396, 1.8834081)
 texture = ExtResource("4_1cxmt")
 
 [node name="Sprite2D3" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=1449982563]
-position = Vector2(49.000004, -193)
-scale = Vector2(2.4006212, 1.941704)
+position = Vector2(49.000004, -246.75)
+scale = Vector2(2.4006212, 2.4237669)
 texture = ExtResource("4_1cxmt")
 
 [node name="Sprite2D4" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=809701591]
-position = Vector2(210.00002, -126)
+position = Vector2(200.00002, -200)
 scale = Vector2(2.0465837, 1.9461884)
 texture = ExtResource("4_1cxmt")
 
 [node name="Sprite2D5" type="Sprite2D" parent="ArrierePlan/Ciel" unique_id=1513363111]
-position = Vector2(461.37503, -156)
-scale = Vector2(2.740683, 2.116592)
+position = Vector2(517, -188)
+scale = Vector2(4.1304345, 2.116592)
 texture = ExtResource("4_1cxmt")
 
 [node name="Sol" type="Node2D" parent="ArrierePlan" unique_id=250418020]
