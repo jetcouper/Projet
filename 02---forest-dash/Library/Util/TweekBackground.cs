@@ -19,6 +19,10 @@ public partial class TweekBackground : Node2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        if (!IsInstanceValid(node))
+        {
+            return;
+        }
         center = node.GlobalPosition;
         Tween tw = CreateTween();
         tw.SetLoops();
