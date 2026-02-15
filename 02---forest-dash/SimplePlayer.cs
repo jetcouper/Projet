@@ -3,28 +3,52 @@ using Godot;
 
 public partial class SimplePlayer : Sprite2D
 {
-    private Vector2 posBiscuit = new Vector2(50, 50);
+    [Export]
+    private Node2D node;
     private Vector2 currentInputVector = new(0, 0);
     private float vitesseMouvement = 100.0f;
-    private bool nezAff = false;
+    [Export]
+    private bool _peutBouger = false;
+
+    public bool PeutBouger 
+    { 
+        get => _peutBouger;
+        set
+        {
+            _peutBouger = value;
+            UpdateVisual();
+
+        } 
+    }
 
     // Called when the node enters the scene tree for the first time.
-    public override void _Ready() { }
+    public override void _Ready() 
+    {
+        UpdateVisual();
+        // Tween tw = CreateTween();
+        // tw.TweenProperty(node, "position:x", node.Position.X, 3.0);
+     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
     {
-        currentInputVector = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-
-        if (Input.IsActionJustPressed("ui_accept"))
+        if(!PeutBouger)
         {
-            nezAff = !nezAff;
+            return;
         }
+        currentInputVector = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        base._PhysicsProcess(delta);
-        posBiscuit += currentInputVector * vitesseMouvement * (float)delta;
+        if(!PeutBouger)
+        {
+            return;
+        }
+        node.Position += currentInputVector * vitesseMouvement * (float)delta;
+    }
+    private void UpdateVisual()
+    {
+        SelfModulate = PeutBouger ? new Color(0.4f, 0.7f, 1f) : Colors.White;
     }
 }
