@@ -23,6 +23,8 @@
 [ext_resource type="Script" uid="uid://cmkytbfjww7ix" path="res://Library/Exemple/ExempleTween.cs" id="19_iwi2t"]
 [ext_resource type="Script" uid="uid://d2idakepb74ft" path="res://Library/Exemple/DcmWindSystem.cs" id="19_lyhln"]
 [ext_resource type="Texture2D" uid="uid://d2rtiuf3r5hva" path="res://Fantasy Forest 1/grass1.png" id="20_lyhln"]
+[ext_resource type="Texture2D" uid="uid://b0dv4dgyfaaim" path="res://Picture/chat.png" id="24_nqgi4"]
+[ext_resource type="Script" uid="uid://ciqtx4gugfdkn" path="res://SimplePlayer.cs" id="25_xxkvu"]
 
 [node name="Niveau" type="Node2D" unique_id=217031011]
 script = ExtResource("1_tfidw")
@@ -262,3 +264,16 @@ script = ExtResource("19_iwi2t")
 node = NodePath(".")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=68231517]
+
+[node name="DCM_PlayerSwitch" type="Node2D" parent="." unique_id=2037043160]
+
+[node name="Chat1" type="Sprite2D" parent="DCM_PlayerSwitch" unique_id=691556729]
+position = Vector2(109, 151.00002)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("24_nqgi4")
+script = ExtResource("25_xxkvu")
+
+[node name="Chat2" type="Sprite2D" parent="DCM_PlayerSwitch" unique_id=1162301283]
+position = Vector2(-162.99997, 154.00002)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("24_nqgi4")
