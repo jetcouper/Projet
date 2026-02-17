@@ -23,9 +23,9 @@
 [ext_resource type="Script" uid="uid://cmkytbfjww7ix" path="res://Library/Exemple/ExempleTween.cs" id="19_iwi2t"]
 [ext_resource type="Script" uid="uid://d2idakepb74ft" path="res://Library/Exemple/DcmWindSystem.cs" id="19_lyhln"]
 [ext_resource type="Texture2D" uid="uid://d2rtiuf3r5hva" path="res://Fantasy Forest 1/grass1.png" id="20_lyhln"]
-[ext_resource type="Script" uid="uid://iaa4ejyn5thy" path="res://DCM_PlayerSwitch.cs" id="24_11scq"]
-[ext_resource type="Texture2D" uid="uid://b0dv4dgyfaaim" path="res://Picture/chat.png" id="24_nqgi4"]
-[ext_resource type="Script" uid="uid://ciqtx4gugfdkn" path="res://SimplePlayer.cs" id="25_xxkvu"]
+[ext_resource type="PackedScene" uid="uid://o41l0lqbaac2" path="res://zone_fin.tscn" id="24_2qyop"]
+[ext_resource type="Script" uid="uid://iaa4ejyn5thy" path="res://Library/Exemple/DCM_PlayerSwitch.cs" id="24_11scq"]
+[ext_resource type="PackedScene" uid="uid://cobha5rbcfn5q" path="res://chat.tscn" id="25_xxkvu"]
 
 [node name="Niveau" type="Node2D" unique_id=217031011]
 script = ExtResource("1_tfidw")
@@ -266,19 +266,19 @@ node = NodePath(".")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=68231517]
 
+[node name="FinNiveau" type="Node2D" parent="." unique_id=1885347789]
+
+[node name="ZoneFin" parent="FinNiveau" unique_id=1281814383 instance=ExtResource("24_2qyop")]
+position = Vector2(-178, -173)
+
+[node name="ZoneFin2" parent="FinNiveau" unique_id=273291581 instance=ExtResource("24_2qyop")]
+position = Vector2(201, -175)
+
 [node name="DCM_PlayerSwitch" type="Node2D" parent="." unique_id=2037043160]
 script = ExtResource("24_11scq")
 
-[node name="Chat1" type="Sprite2D" parent="DCM_PlayerSwitch" unique_id=691556729 node_paths=PackedStringArray("node")]
-position = Vector2(109, 151.00002)
-scale = Vector2(3.5, 3.5)
-texture = ExtResource("24_nqgi4")
-script = ExtResource("25_xxkvu")
-node = NodePath(".")
+[node name="Chat" parent="DCM_PlayerSwitch" unique_id=107249809 instance=ExtResource("25_xxkvu")]
+position = Vector2(-279, 218)
 
-[node name="Chat2" type="Sprite2D" parent="DCM_PlayerSwitch" unique_id=1162301283 node_paths=PackedStringArray("node")]
-position = Vector2(-161.99997, 154.00002)
-scale = Vector2(3.5, 3.5)
-texture = ExtResource("24_nqgi4")
-script = ExtResource("25_xxkvu")
-node = NodePath(".")
+[node name="Chat2" parent="DCM_PlayerSwitch" unique_id=1043711019 instance=ExtResource("25_xxkvu")]
+position = Vector2(134.99997, 180.99998)
