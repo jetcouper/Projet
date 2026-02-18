@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cdcyw61nypn6u"]
+
+[ext_resource type="Texture2D" uid="uid://d0t81mfeqe8fc" path="res://Picture/puppy.png" id="1_yb4ka"]
+[ext_resource type="Script" uid="uid://b1vymoeg57g76" path="res://Ennemie.cs" id="2_a5tde"]
+[ext_resource type="Script" uid="uid://bqpr10ebqhxj2" path="res://EnnemiAreaDetection.cs" id="3_a5tde"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4k40v"]
+radius = 3.999999
+height = 7.999998
+
+[node name="Ennemie" type="Sprite2D" unique_id=1498636929]
+scale = Vector2(0.089166656, 0.084999956)
+texture = ExtResource("1_yb4ka")
+script = ExtResource("2_a5tde")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1075125260]
+collision_layer = 2
+script = ExtResource("3_a5tde")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=650815924]
+scale = Vector2(100, 100)
+shape = SubResource("CapsuleShape2D_4k40v")
+
+[connection signal="area_entered" from="Area2D" to="." method="OnAreaEnteredEnnemi"]
