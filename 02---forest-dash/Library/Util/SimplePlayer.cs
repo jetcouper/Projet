@@ -1,60 +1,52 @@
 using System;
 using Godot;
 
-public partial class SimplePlayer : Sprite2D
+public partial class SimplePlayer : Node2D
 {
     [Export]
-    private Node2D node;
-    private Vector2 currentInputVector = new(0, 0);
-    private float vitesseMouvement = 200.0f;
-    private bool _peutBouger = false;
+    private Node2D NodeToControl;
 
     [Export]
-    public bool PeutBouger
+    private float VelocityPixelPerSecond = 100.0f;
+
+    private bool _isActive = true;
+
+    [Export]
+    public bool IsActive
     {
-        get => _peutBouger;
+        get => _isActive;
         set
         {
-            _peutBouger = value;
-            UpdateVisual();
+            _isActive = value;
+            //Alternative aux if dans les fonctions process et physics process
+            SetProcess(value);
+            SetPhysicsProcess(value);
         }
     }
 
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
-    {
-        UpdateVisual();
-        // Tween tw = CreateTween();
-        // tw.TweenProperty(node, "position:x", node.Position.X, 3.0);
-    }
+    Vector2 _inputVector = new(0.0f, 0.0f);
+
+    public override void _Ready() { }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
+    public override void _Process(double InDelta)
     {
-        if (!PeutBouger)
+        base._Process(InDelta);
+        _inputVector = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+        if (_inputVector.Length() < 1.0f)
         {
             return;
         }
-        currentInputVector = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-        // if (currentInputVector.Length() < 1.0f)
-        // {
-        //     return;
-        // }
-        // currentInputVector = currentInputVector.Normalized();
+        _inputVector = _inputVector.Normalized();
     }
 
-    public override void _PhysicsProcess(double delta)
+    public override void _PhysicsProcess(double InDelta)
     {
-        base._PhysicsProcess(delta);
-        if (!PeutBouger)
+        base._PhysicsProcess(InDelta);
+        if (NodeToControl is null)
         {
             return;
         }
-        node.Position += currentInputVector * vitesseMouvement * (float)delta;
-    }
-
-    private void UpdateVisual()
-    {
-        Modulate = PeutBouger ? Colors.SkyBlue : Colors.White;
+        NodeToControl.Position += VelocityPixelPerSecond * (float)InDelta * _inputVector;
     }
 }

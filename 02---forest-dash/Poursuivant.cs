@@ -1,12 +1,18 @@
 using System;
 using Godot;
+using Utils;
 
-public partial class Ennemie : Sprite2D
+public partial class Poursuivant : Node2D
 {
-    private float vitesseMouvement = 100.0f;
+    [Export]
+    public Node2D cible;
 
     [Export]
-    private Sprite2D chat;
+    private Node2D poursuivant;
+
+    //Peut aller de 0 à 100 à coup de 1
+    [Export(PropertyHint.Range, "0,1000,1,suffix:pps")]
+    private float vitesseMouvement = 100.0f;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready() { }
@@ -29,14 +35,17 @@ public partial class Ennemie : Sprite2D
 
     public override void _PhysicsProcess(double delta)
     {
-        if (chat == null)
-            return;
+        base._PhysicsProcess(delta);
+        poursuivant.EnsureValid();
+        cible.EnsureValid();
 
-        Vector2 ennemiVersChat = chat.GlobalPosition - GlobalPosition;
+        //Manière longue de calculer la direction - IMPORTANT
+        //
+        Vector2 distance = cible.GlobalPosition - GlobalPosition;
+        Vector2 direction = distance.Normalized(); //Pytagore
 
-        Vector2 ennemiVersChatNormalise = ennemiVersChat.Normalized(); //Pytagore
-        Vector2 ligneVersChat = ennemiVersChatNormalise * vitesseMouvement * (float)delta; //Fait 1 * 100
-
-        Position += ligneVersChat;
+        //En pratique, utilise ceci
+        Vector2 altDirection = poursuivant.GlobalPosition.DirectionTo(cible.GlobalPosition);
+        poursuivant.GlobalPosition += altDirection * vitesseMouvement * (float)delta;
     }
 }

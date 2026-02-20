@@ -1,46 +1,77 @@
 using System;
-using System.Collections.Generic;
 using Godot;
 
 public partial class DCM_PlayerSwitch : Node2D
 {
-    private List<SimplePlayer> players = new();
-    private int currentPlayerIndex = 0;
+    private Chat activePlayer;
 
-    // Called when the node enters the scene tree for the first time.
+    [Export]
+    private Color HighlightColor = Colors.SkyBlue;
+
     public override void _Ready()
     {
-        foreach (Node child in GetChildren())
+        bool isFirstOne = true;
+        foreach (Node2D n in GetChildren())
         {
-            if (child is SimplePlayer player)
+            if (n is not Chat sp)
             {
-                players.Add(player);
+                continue;
             }
+            SetPlayerActive(sp, isFirstOne);
+            isFirstOne = false;
         }
-        SetActivePlayer(0);
     }
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
     {
-        base._Process(delta);
-
-        if (Input.IsActionJustPressed("ui_accept"))
+        if (!Input.IsActionJustPressed("ui_accept"))
         {
-            currentPlayerIndex++;
-            if (currentPlayerIndex >= players.Count)
-            {
-                currentPlayerIndex = 0;
-            }
-            SetActivePlayer(currentPlayerIndex);
+            return;
         }
+        ChooseNextActivePlayer();
     }
 
-    private void SetActivePlayer(int index)
+    private void ChooseNextActivePlayer()
     {
-        for (int i = 0; i < players.Count; i++)
+        //On a  des enfants?
+        if (GetChildCount() <= 0)
         {
-            players[i].PeutBouger = (i == index);
+            return;
         }
+
+        //Joueur actif est valide?
+        if (!IsInstanceValid(activePlayer))
+        {
+            foreach (Node2D n in GetChildren())
+            {
+                if (n is Chat sp)
+                {
+                    activePlayer = sp;
+                    break;
+                }
+            }
+        }
+        SetPlayerActive(activePlayer, false);
+
+        //Index du joueur courrant
+        int index = GetChildren().IndexOf(activePlayer);
+        if (index == -1)
+        {
+            return;
+        }
+        index = (index + 1) % GetChildCount();
+        Chat nextSp = GetChildOrNull<Chat>(index);
+        if (nextSp is null)
+        {
+            return;
+        }
+        activePlayer = nextSp;
+        SetPlayerActive(activePlayer, true);
+    }
+
+    private void SetPlayerActive(Chat InSP, bool InIsActive)
+    {
+        InSP.Modulate = InIsActive ? HighlightColor : Colors.White;
+        InSP.IsActive = InIsActive;
     }
 }

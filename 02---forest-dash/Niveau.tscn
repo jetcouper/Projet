@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://o41l0lqbaac2" path="res://zone_fin.tscn" id="24_2qyop"]
 [ext_resource type="Script" uid="uid://iaa4ejyn5thy" path="res://Library/Exemple/DCM_PlayerSwitch.cs" id="24_11scq"]
 [ext_resource type="PackedScene" uid="uid://cobha5rbcfn5q" path="res://chat.tscn" id="25_xxkvu"]
-[ext_resource type="PackedScene" uid="uid://cdcyw61nypn6u" path="res://ennemie.tscn" id="27_2qyop"]
+[ext_resource type="PackedScene" uid="uid://bbry2dvgexmt5" path="res://chien.tscn" id="27_2qyop"]
 
 [node name="Niveau" type="Node2D" unique_id=217031011]
 script = ExtResource("1_tfidw")
@@ -276,13 +276,16 @@ position = Vector2(-178, -173)
 position = Vector2(201, -175)
 
 [node name="DCM_PlayerSwitch" type="Node2D" parent="." unique_id=2037043160]
+position = Vector2(-1, -1)
 script = ExtResource("24_11scq")
 
 [node name="Chat" parent="DCM_PlayerSwitch" unique_id=107249809 instance=ExtResource("25_xxkvu")]
-position = Vector2(-279.00003, 217.00002)
+position = Vector2(336.99994, 180.00002)
+IsActive = true
 
-[node name="DCM_Ennemie" type="Node2D" parent="." unique_id=225500998]
+[node name="Chat2" parent="DCM_PlayerSwitch" unique_id=429415211 instance=ExtResource("25_xxkvu")]
+position = Vector2(-180.99991, 204)
 
-[node name="Ennemie" parent="DCM_Ennemie" unique_id=1498636929 node_paths=PackedStringArray("chat") instance=ExtResource("27_2qyop")]
-position = Vector2(-365, -33.999973)
-chat = NodePath("../../DCM_PlayerSwitch/Chat")
+[node name="Chien" parent="." unique_id=745560808 node_paths=PackedStringArray("cible") instance=ExtResource("27_2qyop")]
+position = Vector2(-384, -81.99999)
+cible = NodePath("../DCM_PlayerSwitch/Chat")
