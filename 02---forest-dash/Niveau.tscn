@@ -27,6 +27,7 @@
 [ext_resource type="Script" uid="uid://iaa4ejyn5thy" path="res://Library/Exemple/DCM_PlayerSwitch.cs" id="24_11scq"]
 [ext_resource type="PackedScene" uid="uid://cobha5rbcfn5q" path="res://chat.tscn" id="25_xxkvu"]
 [ext_resource type="PackedScene" uid="uid://bbry2dvgexmt5" path="res://chien.tscn" id="27_2qyop"]
+[ext_resource type="PackedScene" uid="uid://cp18u450rk31d" path="res://souris.tscn" id="28_4k40v"]
 
 [node name="Niveau" type="Node2D" unique_id=217031011]
 script = ExtResource("1_tfidw")
@@ -288,4 +289,8 @@ position = Vector2(-180.99991, 204)
 
 [node name="Chien" parent="." unique_id=745560808 node_paths=PackedStringArray("cible") instance=ExtResource("27_2qyop")]
 position = Vector2(-384, -81.99999)
+cible = NodePath("../DCM_PlayerSwitch/Chat")
+
+[node name="Souris" parent="." unique_id=1528147378 node_paths=PackedStringArray("cible") instance=ExtResource("28_4k40v")]
+position = Vector2(-103.665016, -69.49999)
 cible = NodePath("../DCM_PlayerSwitch/Chat")
