@@ -11,7 +11,7 @@ public partial class Poursuivant : Node2D
     private Node2D poursuivant;
 
     //Peut aller de 0 à 100 à coup de 1
-    [Export(PropertyHint.Range, "0,1000,1,suffix:pps")]
+    [Export(PropertyHint.Range, "-1000,1000,1,suffix:pps")]
     private float vitesseMouvement = 100.0f;
 
     // Called when the node enters the scene tree for the first time.
@@ -28,10 +28,11 @@ public partial class Poursuivant : Node2D
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-    {
-        QueueRedraw();
-    }
+    // public override void _Process(double delta)
+    // {
+    //     base._Process(delta);
+    //     QueueRedraw();
+    // }
 
     public override void _PhysicsProcess(double delta)
     {
@@ -40,12 +41,18 @@ public partial class Poursuivant : Node2D
         cible.EnsureValid();
 
         //Manière longue de calculer la direction - IMPORTANT
-        //
+        //direction et altDirection donnent le meme résultat
+        //Calcul de l'espace global
         Vector2 distance = cible.GlobalPosition - GlobalPosition;
         Vector2 direction = distance.Normalized(); //Pytagore
 
         //En pratique, utilise ceci
         Vector2 altDirection = poursuivant.GlobalPosition.DirectionTo(cible.GlobalPosition);
         poursuivant.GlobalPosition += altDirection * vitesseMouvement * (float)delta;
+
+        float scaleX =
+            altDirection.X > 0.0f ? Math.Abs(poursuivant.Scale.X) : -Math.Abs(poursuivant.Scale.X);
+        Vector2 newScale = new Vector2(scaleX, poursuivant.Scale.Y);
+        poursuivant.Scale = newScale;
     }
 }

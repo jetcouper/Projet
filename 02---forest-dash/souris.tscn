@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://dqtkqqo25etv6" path="res://Picture/MouseSpritesheet.png" id="1_23c24"]
 [ext_resource type="Script" uid="uid://cosu0sby27c3h" path="res://Souris.cs" id="2_jedsq"]
-[ext_resource type="Script" uid="uid://cu1mxa1xxpkrw" path="res://Poursuivi.cs" id="3_4kygq"]
 [ext_resource type="Script" uid="uid://bqpr10ebqhxj2" path="res://EnnemiAreaDetection.cs" id="3_jedsq"]
+[ext_resource type="Script" uid="uid://b1vymoeg57g76" path="res://Library/Util/Poursuivant.cs" id="4_jedsq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4kygq"]
-radius = 10.781725
-height = 21.56345
+radius = 11.767153
+height = 23.756344
 
-[node name="Souris" type="Sprite2D" unique_id=1528147378 node_paths=PackedStringArray("poursuite")]
+[node name="Souris" type="Sprite2D" unique_id=1528147378 node_paths=PackedStringArray("poursuite") groups=["Proie"]]
 scale = Vector2(5.0139575, 5.4722223)
 texture = ExtResource("1_23c24")
 hframes = 4
@@ -25,5 +25,7 @@ script = ExtResource("3_jedsq")
 shape = SubResource("CapsuleShape2D_4kygq")
 
 [node name="DPM_Poursuivi" type="Node2D" parent="." unique_id=44210523 node_paths=PackedStringArray("poursuivant")]
-script = ExtResource("3_4kygq")
+position = Vector2(-0.3988865, -0.1827411)
+script = ExtResource("4_jedsq")
 poursuivant = NodePath("..")
+vitesseMouvement = -50.0

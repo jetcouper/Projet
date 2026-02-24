@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://cobha5rbcfn5q" path="res://chat.tscn" id="25_xxkvu"]
 [ext_resource type="PackedScene" uid="uid://bbry2dvgexmt5" path="res://chien.tscn" id="27_2qyop"]
 [ext_resource type="PackedScene" uid="uid://cp18u450rk31d" path="res://souris.tscn" id="28_4k40v"]
+[ext_resource type="PackedScene" uid="uid://7jsgelvryc4e" path="res://dcm_spawner_cible.tscn" id="29_8f2nu"]
 
 [node name="Niveau" type="Node2D" unique_id=217031011]
 script = ExtResource("1_tfidw")
@@ -242,7 +243,7 @@ script = ExtResource("19_bvsml")
 node = NodePath(".")
 
 [node name="Grass4" type="Sprite2D" parent="ArrierePlan/DCM_WindSystem" unique_id=1256054857 node_paths=PackedStringArray("node")]
-position = Vector2(-51, 227.00002)
+position = Vector2(-51, 183.00002)
 scale = Vector2(5.8461537, 5.833334)
 texture = ExtResource("20_lyhln")
 centered = false
@@ -288,9 +289,11 @@ IsActive = true
 position = Vector2(-180.99991, 204)
 
 [node name="Chien" parent="." unique_id=745560808 node_paths=PackedStringArray("cible") instance=ExtResource("27_2qyop")]
-position = Vector2(-384, -81.99999)
+position = Vector2(-385, -82.99999)
 cible = NodePath("../DCM_PlayerSwitch/Chat")
 
 [node name="Souris" parent="." unique_id=1528147378 node_paths=PackedStringArray("cible") instance=ExtResource("28_4k40v")]
-position = Vector2(-103.665016, -69.49999)
+position = Vector2(220.00003, 42.999992)
 cible = NodePath("../DCM_PlayerSwitch/Chat")
+
+[node name="DCM_SpawnerCible" parent="." unique_id=880384011 instance=ExtResource("29_8f2nu")]

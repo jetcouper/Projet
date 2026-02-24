@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://bbry2dvgexmt5"]
 
-[ext_resource type="Texture2D" uid="uid://cxuy0obh811ac" path="res://res/Pet Dogs Pack/Dog-1-Golden-Retriever/Golden-Retriever-walk.png" id="1_52xt6"]
+[ext_resource type="Texture2D" uid="uid://dpjo41b4ich5w" path="res://res/Pet Dogs Pack/Dog-1-Golden-Retriever/Golden-Retriever-idle.png" id="1_mj05o"]
 [ext_resource type="Script" uid="uid://20jqs51ch6xa" path="res://Chien.cs" id="2_mi2hd"]
-[ext_resource type="Script" uid="uid://b1vymoeg57g76" path="res://Poursuivant.cs" id="2_mj05o"]
+[ext_resource type="Script" uid="uid://b1vymoeg57g76" path="res://Library/Util/Poursuivant.cs" id="2_mj05o"]
 [ext_resource type="Script" uid="uid://bqpr10ebqhxj2" path="res://EnnemiAreaDetection.cs" id="3_mi2hd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qeu34"]
-radius = 20.420418
-height = 40.840836
+radius = 13.213213
+height = 26.426426
 
 [node name="Chien" type="Sprite2D" unique_id=745560808 node_paths=PackedStringArray("poursuite")]
 scale = Vector2(3.33, 3.33)
-texture = ExtResource("1_52xt6")
-hframes = 8
+texture = ExtResource("1_mj05o")
+hframes = 10
 frame = 3
 script = ExtResource("2_mi2hd")
 poursuite = NodePath("DPM_Poursuite")
@@ -24,5 +24,7 @@ script = ExtResource("3_mi2hd")
 shape = SubResource("CapsuleShape2D_qeu34")
 
 [node name="DPM_Poursuite" type="Node2D" parent="." unique_id=322648244 node_paths=PackedStringArray("poursuivant")]
+position = Vector2(-0.3003003, -0.3003003)
 script = ExtResource("2_mj05o")
 poursuivant = NodePath("..")
+vitesseMouvement = 50.0

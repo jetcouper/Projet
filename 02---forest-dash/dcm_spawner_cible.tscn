@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://7jsgelvryc4e"]
+
+[ext_resource type="Script" uid="uid://bjyx5wg0du0v2" path="res://DcmSpawnerCible.cs" id="1_3uh0l"]
+[ext_resource type="PackedScene" uid="uid://cp18u450rk31d" path="res://souris.tscn" id="2_31o0g"]
+
+[node name="DCM_SpawnerCible" type="Node2D" unique_id=880384011 node_paths=PackedStringArray("timer")]
+script = ExtResource("1_3uh0l")
+SpawneeScene = ExtResource("2_31o0g")
+timer = NodePath("DPM_Timer")
+
+[node name="DPM_Timer" type="Timer" parent="." unique_id=660264955]
+autostart = true
+
+[connection signal="timeout" from="DPM_Timer" to="." method="Spawn"]

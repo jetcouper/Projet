@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 project/assembly_name="02 - ForestDash"
 
+[global_group]
+
+Chasseur=""
+Proie=""
+
 [layer_names]
 
 2d_physics/layer_1="ChatGauche"

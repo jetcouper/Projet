@@ -14,5 +14,5 @@ public partial class Souris : Sprite2D
 
     [ExportGroup("Internal")]
     [Export]
-    Poursuivi poursuite;
+    Poursuivant poursuite;
 }
