@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://bqpr10ebqhxj2" path="res://EnnemiAreaDetection.cs" id="3_mi2hd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qeu34"]
-radius = 13.213213
-height = 26.426426
+radius = 7.207207
+height = 25.823822
 
 [node name="Chien" type="Sprite2D" unique_id=745560808 node_paths=PackedStringArray("poursuite")]
 scale = Vector2(3.33, 3.33)
@@ -21,6 +21,8 @@ poursuite = NodePath("DPM_Poursuite")
 script = ExtResource("3_mi2hd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=972176848]
+position = Vector2(1.8018018, 0)
+rotation = -1.5832508
 shape = SubResource("CapsuleShape2D_qeu34")
 
 [node name="DPM_Poursuite" type="Node2D" parent="." unique_id=322648244 node_paths=PackedStringArray("poursuivant")]
