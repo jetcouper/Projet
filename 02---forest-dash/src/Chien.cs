@@ -19,10 +19,11 @@ public partial class Chien : Sprite2D
     public override void _Ready()
     {
         base._Ready();
+        Vector2 oldScale = Scale;
         Scale = Vector2.Zero;
         Tween tween = CreateTween();
         tween
-            .TweenProperty(this, "scale", Vector2.One, 0.5f)
+            .TweenProperty(this, "scale", oldScale, 0.5f)
             .SetTrans(Tween.TransitionType.Back)
             .SetEase(Tween.EaseType.Out);
     }

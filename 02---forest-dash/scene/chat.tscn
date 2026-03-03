@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cobha5rbcfn5q"]
 
 [ext_resource type="Texture2D" uid="uid://b0dv4dgyfaaim" path="res://Picture/chat.png" id="1_t67cl"]
-[ext_resource type="Script" uid="uid://cg4cid3uykpm3" path="res://Chat.cs" id="2_jqtso"]
+[ext_resource type="Script" uid="uid://cg4cid3uykpm3" path="res://src/Chat.cs" id="2_jqtso"]
 [ext_resource type="Script" uid="uid://ciqtx4gugfdkn" path="res://Library/Util/SimplePlayer.cs" id="2_mp2uv"]
-[ext_resource type="Script" uid="uid://b7kaogq5byx6h" path="res://CatAreaDetection.cs" id="3_jqtso"]
+[ext_resource type="Script" uid="uid://b7kaogq5byx6h" path="res://src/CatAreaDetection.cs" id="3_jqtso"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_11scq"]
 radius = 4.857113

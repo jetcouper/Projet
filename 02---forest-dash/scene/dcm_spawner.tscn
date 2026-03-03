@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://7jsgelvryc4e"]
+
+[ext_resource type="Script" uid="uid://bm2777si6apxs" path="res://src/DcmSpawner.cs" id="1_jd41g"]
+[ext_resource type="Texture2D" uid="uid://bai54rwr8wtfm" path="res://icon.svg" id="2_dcqcq"]
+[ext_resource type="Script" uid="uid://cahqtegu8nyo" path="res://Library/Util/EditorDebugOnly.cs" id="3_bqq6b"]
+
+[node name="DCM_Spawner" type="Node2D" unique_id=880384011 node_paths=PackedStringArray("timer")]
+script = ExtResource("1_jd41g")
+timer = NodePath("DPM_Timer")
+
+[node name="DPM_Timer" type="Timer" parent="." unique_id=660264955]
+autostart = true
+
+[node name="Debug" type="Sprite2D" parent="." unique_id=2079534429]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(-1, -1)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_dcqcq")
+script = ExtResource("3_bqq6b")

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cp18u450rk31d"]
 
 [ext_resource type="Texture2D" uid="uid://dqtkqqo25etv6" path="res://Picture/MouseSpritesheet.png" id="1_23c24"]
-[ext_resource type="Script" uid="uid://cosu0sby27c3h" path="res://Souris.cs" id="2_jedsq"]
-[ext_resource type="Script" uid="uid://bqpr10ebqhxj2" path="res://EnnemiAreaDetection.cs" id="3_jedsq"]
+[ext_resource type="Script" uid="uid://cosu0sby27c3h" path="res://src/Souris.cs" id="2_jedsq"]
+[ext_resource type="Script" uid="uid://dugehedgo18of" path="res://src/DpmEliminationAuContact.cs" id="3_smt4g"]
 [ext_resource type="Script" uid="uid://b1vymoeg57g76" path="res://Library/Util/Poursuivant.cs" id="4_jedsq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4kygq"]
@@ -17,15 +17,18 @@ vframes = 12
 script = ExtResource("2_jedsq")
 poursuite = NodePath("DPM_Poursuivi")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=673021537]
-position = Vector2(-1.1966596, 5.299492)
-script = ExtResource("3_jedsq")
+[node name="DPM_EliminationAuContact" type="Area2D" parent="." unique_id=673021537 node_paths=PackedStringArray("RootToEliminate")]
+position = Vector2(-1.3961028, 5.1167507)
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("3_smt4g")
+RootToEliminate = NodePath("..")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1025000577]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DPM_EliminationAuContact" unique_id=1025000577]
 shape = SubResource("CapsuleShape2D_4kygq")
 
 [node name="DPM_Poursuivi" type="Node2D" parent="." unique_id=44210523 node_paths=PackedStringArray("poursuivant")]
 position = Vector2(-0.3988865, -0.1827411)
 script = ExtResource("4_jedsq")
 poursuivant = NodePath("..")
-vitesseMouvement = -50.0
+vitesseMouvement = -39.0
