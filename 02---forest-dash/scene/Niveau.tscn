@@ -298,8 +298,10 @@ position = Vector2(-180.99991, 204)
 position = Vector2(135, -20)
 SpawneeScene = ExtResource("28_4k40v")
 MediateurCible = NodePath("..")
+AlgoSelectionCible = 2
 
 [node name="DCM_SpawnerChien" parent="MED_Cible" unique_id=1065984812 node_paths=PackedStringArray("MediateurCible") instance=ExtResource("29_gvspt")]
 position = Vector2(-265, -78)
 SpawneeScene = ExtResource("27_2qyop")
 MediateurCible = NodePath("..")
+AlgoSelectionCible = 2

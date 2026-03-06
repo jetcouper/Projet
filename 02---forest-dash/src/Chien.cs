@@ -1,8 +1,9 @@
 using System;
+using System.Security.Cryptography;
 using Godot;
 using Utils;
 
-public partial class Chien : Sprite2D
+public partial class Chien : Node2D, ICiblable
 {
     [ExportGroup("External")]
     [Export]
@@ -26,5 +27,10 @@ public partial class Chien : Sprite2D
             .TweenProperty(this, "scale", oldScale, 0.5f)
             .SetTrans(Tween.TransitionType.Back)
             .SetEase(Tween.EaseType.Out);
+    }
+
+    public void SetCible(Node2D InCible)
+    {
+        cible = InCible;
     }
 }

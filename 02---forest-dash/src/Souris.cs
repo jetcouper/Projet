@@ -2,7 +2,7 @@ using System;
 using Godot;
 using Utils;
 
-public partial class Souris : Sprite2D
+public partial class Souris : Sprite2D, ICiblable
 {
     [ExportGroup("External")]
     [Export]
@@ -48,5 +48,10 @@ public partial class Souris : Sprite2D
             .SetEase(Tween.EaseType.Out);
         tween.SetParallel(false);
         tween.Finished += QueueFree;
+    }
+
+    public void SetCible(Node2D InCible)
+    {
+        cible = InCible;
     }
 }

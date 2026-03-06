@@ -19,7 +19,7 @@ public partial class MedCible : Node2D
     {
         eChatActif,
         eChatLePlusProche,
-        eSourisPlusProche,
+        eSourisAuHasard,
         eMax,
     }
 
@@ -33,7 +33,7 @@ public partial class MedCible : Node2D
             case EAlgoSelectionCible.eChatLePlusProche: { }
                 break;
             default:
-            case EAlgoSelectionCible.eSourisPlusProche:
+            case EAlgoSelectionCible.eSourisAuHasard:
                 {
                     ret = SpawnerSouris
                         .EnsureValid()
