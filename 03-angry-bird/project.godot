@@ -1,0 +1,33 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="03-AngryBird"
+run/main_scene="uid://dcp5tp0gwuymd"
+config/features=PackedStringArray("4.6", "C#", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalForceSleep="*uid://dg0uo45sg3gu8"
+MaDebugDraw2d="*uid://csi77lsqyfac6"
+
+[dotnet]
+
+project/assembly_name="03-AngryBird"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"

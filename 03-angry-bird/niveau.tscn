@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dcp5tp0gwuymd"]
+
+[ext_resource type="Script" uid="uid://d277h4bjmj12q" path="res://Niveau.cs" id="1_d4ha2"]
+[ext_resource type="Script" uid="uid://c6gxpa5vxqhdn" path="res://Library/Physics/GlobalMouseGrabber.cs" id="2_vyld7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vyld7"]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vyld7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4ha2"]
+size = Vector2(611.5233, 63.683296)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vyld7"]
+
+[node name="Node2D" type="Node2D" unique_id=2113537121]
+script = ExtResource("1_d4ha2")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=548077347]
+position = Vector2(939, 81)
+mass = 20.0
+physics_material_override = SubResource("PhysicsMaterial_vyld7")
+linear_damp_mode = 1
+linear_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1776245261]
+scale = Vector2(2.3577347, 2.3577347)
+shape = SubResource("CircleShape2D_vyld7")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="." unique_id=1339595154]
+position = Vector2(739, 149)
+mass = 20.0
+physics_material_override = SubResource("PhysicsMaterial_vyld7")
+sleeping = true
+linear_damp_mode = 1
+linear_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2" unique_id=1305847065]
+scale = Vector2(4.2983894, 4.2983894)
+shape = SubResource("CircleShape2D_vyld7")
+debug_color = Color(0, 0.6, 0, 0.41960785)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=926904312]
+position = Vector2(699, 372)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=232751257]
+rotation = 0.30007896
+shape = SubResource("RectangleShape2D_d4ha2")
+
+[node name="GlobalMouseGrabber" type="Node2D" parent="." unique_id=178921890]
+script = ExtResource("2_vyld7")
+
+[node name="Mur" type="StaticBody2D" parent="." unique_id=1033379920]
+position = Vector2(620, 648)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mur" unique_id=1279844256]
+shape = SubResource("WorldBoundaryShape2D_vyld7")
+
+[node name="Mur2" type="StaticBody2D" parent="." unique_id=1337078862]
+position = Vector2(1151.0001, 317.99997)
+rotation = -1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mur2" unique_id=360083718]
+shape = SubResource("WorldBoundaryShape2D_vyld7")
+
+[node name="Mur3" type="StaticBody2D" parent="." unique_id=1599045219]
+position = Vector2(592, 2)
+rotation = -3.1415927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mur3" unique_id=1761341273]
+shape = SubResource("WorldBoundaryShape2D_vyld7")
+
+[node name="Mur4" type="StaticBody2D" parent="." unique_id=1267617971]
+position = Vector2(1, 303.00003)
+rotation = -4.712389
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mur4" unique_id=2023280785]
+shape = SubResource("WorldBoundaryShape2D_vyld7")
