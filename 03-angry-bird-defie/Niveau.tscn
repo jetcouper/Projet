@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://csqnoejebdked"]
+
+[ext_resource type="PackedScene" uid="uid://dxko48vvmhbkh" path="res://bird.tscn" id="1_rr75y"]
+[ext_resource type="Script" uid="uid://c6gxpa5vxqhdn" path="res://Library/Physics/GlobalMouseGrabber.cs" id="1_tfidw"]
+[ext_resource type="PackedScene" uid="uid://cm4tr6itsy4bf" path="res://Boite.tscn" id="2_sdggm"]
+[ext_resource type="PackedScene" uid="uid://cideu0eqss7ks" path="res://cercle.tscn" id="3_pcds7"]
+[ext_resource type="PackedScene" uid="uid://cf11meh1426ey" path="res://Static.tscn" id="4_3s1m1"]
+[ext_resource type="PackedScene" uid="uid://dit0cclvqvjs6" path="res://capsule.tscn" id="5_7ufvj"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58sr7"]
+
+[node name="Node2D" type="Node2D" unique_id=211834916]
+scale = Vector2(2, 2)
+
+[node name="Bird" parent="." unique_id=859989539 instance=ExtResource("1_rr75y")]
+position = Vector2(309, 335)
+
+[node name="Mur1" type="StaticBody2D" parent="." unique_id=193703543]
+position = Vector2(557, 1)
+rotation = 3.1415927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mur1" unique_id=376681731]
+shape = SubResource("WorldBoundaryShape2D_58sr7")
+
+[node name="Mur2" type="StaticBody2D" parent="." unique_id=574742983]
+position = Vector2(0, 282)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mur2" unique_id=1710369204]
+shape = SubResource("WorldBoundaryShape2D_58sr7")
+
+[node name="Mur3" type="StaticBody2D" parent="." unique_id=1034437095]
+position = Vector2(563, 647)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mur3" unique_id=728880088]
+shape = SubResource("WorldBoundaryShape2D_58sr7")
+
+[node name="Mur4" type="StaticBody2D" parent="." unique_id=1044512773]
+position = Vector2(1152, 306)
+rotation = 4.712389
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mur4" unique_id=88750399]
+shape = SubResource("WorldBoundaryShape2D_58sr7")
+
+[node name="GlobalMouseGrabber" type="Node2D" parent="." unique_id=682589417]
+script = ExtResource("1_tfidw")
+
+[node name="rectangle" parent="." unique_id=1842520345 instance=ExtResource("2_sdggm")]
+texture_filter = 1
+position = Vector2(903, 551.5)
+
+[node name="rectangle2" parent="." unique_id=1282721762 instance=ExtResource("2_sdggm")]
+texture_filter = 1
+position = Vector2(1056, 550)
+
+[node name="rectangle3" parent="." unique_id=196801687 instance=ExtResource("2_sdggm")]
+texture_filter = 1
+position = Vector2(759.5, 548)
+rotation = 0.84823
+
+[node name="rectangle4" parent="." unique_id=368874882 instance=ExtResource("2_sdggm")]
+texture_filter = 1
+position = Vector2(1103.5, 264.5)
+
+[node name="cercle" parent="." unique_id=1597710266 instance=ExtResource("3_pcds7")]
+position = Vector2(985, 284)
+
+[node name="cercle2" parent="." unique_id=1330837755 instance=ExtResource("3_pcds7")]
+position = Vector2(700, 442.5)
+
+[node name="cercle3" parent="." unique_id=1165502296 instance=ExtResource("3_pcds7")]
+position = Vector2(826.5, 387)
+
+[node name="cercle4" parent="." unique_id=1529282431 instance=ExtResource("3_pcds7")]
+position = Vector2(1090, 107.5)
+
+[node name="static" parent="." unique_id=2044610299 instance=ExtResource("4_3s1m1")]
+position = Vector2(712, 300)
+rotation = -0.5848562
+
+[node name="static2" parent="." unique_id=924570431 instance=ExtResource("4_3s1m1")]
+position = Vector2(550, 427.5)
+rotation = -0.9118609
+
+[node name="capsule" parent="." unique_id=986982190 instance=ExtResource("5_7ufvj")]
+position = Vector2(981, 399)
+rotation = -1.5725417
+
+[node name="capsule2" parent="." unique_id=1232386670 instance=ExtResource("5_7ufvj")]
+position = Vector2(740.9999, 97.99994)
+rotation = -1.5725417
+
+[node name="capsule3" parent="." unique_id=1552915873 instance=ExtResource("5_7ufvj")]
+position = Vector2(928.49994, 96.99994)
+rotation = -1.5725417
+
+[node name="capsule4" parent="." unique_id=1480480315 instance=ExtResource("5_7ufvj")]
+position = Vector2(637.9999, 211.49995)
+rotation = -1.5725417
+
+[node name="capsule5" parent="." unique_id=2138120308 instance=ExtResource("5_7ufvj")]
+position = Vector2(515.9999, 311.99997)
+rotation = -1.5725417

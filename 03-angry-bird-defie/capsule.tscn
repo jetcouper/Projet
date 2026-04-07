@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dit0cclvqvjs6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fceka"]
+bounce = 1.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fceka"]
+
+[node name="capsule" type="RigidBody2D" unique_id=986982190]
+physics_material_override = SubResource("PhysicsMaterial_fceka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=602565022]
+scale = Vector2(4.8182898, 6.0563016)
+shape = SubResource("CapsuleShape2D_fceka")
+debug_color = Color(0.8, 1, 0.105882354, 0.41960785)
