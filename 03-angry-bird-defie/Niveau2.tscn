@@ -7,7 +7,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y6xsk"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vwgu3"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pxj2h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lp4gg"]
 
@@ -34,7 +34,7 @@ scale = Vector2(3.529111, 3.529111)
 script = ExtResource("2_pxj2h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=214533025]
-shape = SubResource("CircleShape2D_vwgu3")
+shape = SubResource("CapsuleShape2D_pxj2h")
 debug_color = Color(0.2494027, 0.6358461, 0, 0.41960785)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1155586681]
