@@ -5,7 +5,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_owhn0"]
 bounce = 0.75
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sdggm"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g5k2s"]
 
 [node name="Bird" type="RigidBody2D" unique_id=859989539]
 physics_material_override = SubResource("PhysicsMaterial_owhn0")
@@ -13,7 +13,7 @@ script = ExtResource("1_g5k2s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1236549100]
 scale = Vector2(3.100465, 3.100465)
-shape = SubResource("CircleShape2D_sdggm")
+shape = SubResource("CapsuleShape2D_g5k2s")
 debug_color = Color(0, 0.6, 0, 0.41960785)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=731058733]

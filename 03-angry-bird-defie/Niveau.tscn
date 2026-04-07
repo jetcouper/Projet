@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://csqnoejebdked"]
 
-[ext_resource type="PackedScene" uid="uid://dxko48vvmhbkh" path="res://bird.tscn" id="1_rr75y"]
+[ext_resource type="PackedScene" uid="uid://dxko48vvmhbkh" path="res://Scenes/bird.tscn" id="1_rr75y"]
 [ext_resource type="Script" uid="uid://c6gxpa5vxqhdn" path="res://Library/Physics/GlobalMouseGrabber.cs" id="1_tfidw"]
-[ext_resource type="PackedScene" uid="uid://cm4tr6itsy4bf" path="res://Boite.tscn" id="2_sdggm"]
-[ext_resource type="PackedScene" uid="uid://cideu0eqss7ks" path="res://cercle.tscn" id="3_pcds7"]
-[ext_resource type="PackedScene" uid="uid://cf11meh1426ey" path="res://Static.tscn" id="4_3s1m1"]
-[ext_resource type="PackedScene" uid="uid://dit0cclvqvjs6" path="res://capsule.tscn" id="5_7ufvj"]
+[ext_resource type="PackedScene" uid="uid://cm4tr6itsy4bf" path="res://Scenes/Boite.tscn" id="2_sdggm"]
+[ext_resource type="PackedScene" uid="uid://cideu0eqss7ks" path="res://Scenes/cercle.tscn" id="3_pcds7"]
+[ext_resource type="PackedScene" uid="uid://cf11meh1426ey" path="res://Scenes/Static.tscn" id="4_3s1m1"]
+[ext_resource type="PackedScene" uid="uid://dit0cclvqvjs6" path="res://Scenes/capsule.tscn" id="5_7ufvj"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58sr7"]
 
@@ -60,7 +60,7 @@ rotation = 0.84823
 
 [node name="rectangle4" parent="." unique_id=368874882 instance=ExtResource("2_sdggm")]
 texture_filter = 1
-position = Vector2(1103.5, 264.5)
+position = Vector2(460.5, 123)
 
 [node name="cercle" parent="." unique_id=1597710266 instance=ExtResource("3_pcds7")]
 position = Vector2(985, 284)
@@ -95,7 +95,7 @@ position = Vector2(928.49994, 96.99994)
 rotation = -1.5725417
 
 [node name="capsule4" parent="." unique_id=1480480315 instance=ExtResource("5_7ufvj")]
-position = Vector2(637.9999, 211.49995)
+position = Vector2(858, 203.49997)
 rotation = -1.5725417
 
 [node name="capsule5" parent="." unique_id=2138120308 instance=ExtResource("5_7ufvj")]

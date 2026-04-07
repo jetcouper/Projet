@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://lgefcfi2reoq"]
+
+[ext_resource type="Script" uid="uid://u0lhbr742q1j" path="res://Bird.cs" id="1_lp4gg"]
+[ext_resource type="Script" uid="uid://tapvj0002pdq" path="res://Graviter.cs" id="2_g1n1i"]
+[ext_resource type="Script" uid="uid://cx6uvtq1kv73c" path="res://CharacterBody2d.cs" id="2_pxj2h"]
+[ext_resource type="Script" uid="uid://oqx2q2ivocu5" path="res://AnimatableBody2d.cs" id="3_vwgu3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y6xsk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vwgu3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lp4gg"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y6xsk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pxj2h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6afd"]
+
+[node name="Niveau2" type="Node2D" unique_id=897582415]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=279954779]
+position = Vector2(261, 455)
+script = ExtResource("1_lp4gg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=2071904302]
+scale = Vector2(7.029807, 7.029807)
+shape = SubResource("CircleShape2D_y6xsk")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1773455195]
+position = Vector2(449, 530)
+scale = Vector2(3.529111, 3.529111)
+script = ExtResource("2_pxj2h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=214533025]
+shape = SubResource("CircleShape2D_vwgu3")
+debug_color = Color(0.2494027, 0.6358461, 0, 0.41960785)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1155586681]
+position = Vector2(626, 377)
+scale = Vector2(11.814509, 6.689096)
+script = ExtResource("2_g1n1i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1105995228]
+shape = SubResource("RectangleShape2D_lp4gg")
+
+[node name="Mur1" type="StaticBody2D" parent="." unique_id=1187528391]
+position = Vector2(557, 1)
+rotation = 3.1415927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mur1" unique_id=1787115815]
+shape = SubResource("WorldBoundaryShape2D_y6xsk")
+
+[node name="Mur2" type="StaticBody2D" parent="." unique_id=2089850227]
+position = Vector2(0, 282)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mur2" unique_id=1357861847]
+shape = SubResource("WorldBoundaryShape2D_y6xsk")
+
+[node name="Mur3" type="StaticBody2D" parent="." unique_id=1762989226]
+position = Vector2(563, 647)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mur3" unique_id=1993357489]
+shape = SubResource("WorldBoundaryShape2D_y6xsk")
+
+[node name="Mur4" type="StaticBody2D" parent="." unique_id=2034124057]
+position = Vector2(1152, 306)
+rotation = 4.712389
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mur4" unique_id=662739112]
+shape = SubResource("WorldBoundaryShape2D_y6xsk")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1234189158]
+position = Vector2(292, 228)
+physics_material_override = SubResource("PhysicsMaterial_pxj2h")
+script = ExtResource("3_vwgu3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=888236474]
+scale = Vector2(12.541496, 2.3537495)
+shape = SubResource("RectangleShape2D_w6afd")
+debug_color = Color(0.98445004, 0, 0.34792343, 0.41960785)
