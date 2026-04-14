@@ -4,8 +4,9 @@
 [ext_resource type="Script" uid="uid://tapvj0002pdq" path="res://Graviter.cs" id="2_g1n1i"]
 [ext_resource type="Script" uid="uid://cx6uvtq1kv73c" path="res://CharacterBody2d.cs" id="2_pxj2h"]
 [ext_resource type="Script" uid="uid://oqx2q2ivocu5" path="res://AnimatableBody2d.cs" id="3_vwgu3"]
+[ext_resource type="PackedScene" uid="uid://cf11meh1426ey" path="res://Scenes/Static.tscn" id="5_w6afd"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_y6xsk"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w6afd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pxj2h"]
 
@@ -21,15 +22,19 @@
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=279954779]
 position = Vector2(261, 455)
+
+[node name="DPM_lancer" type="Node2D" parent="RigidBody2D" unique_id=259611401 node_paths=PackedStringArray("rigidBody")]
 script = ExtResource("1_lp4gg")
+rigidBody = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=2071904302]
+position = Vector2(0, 1)
 scale = Vector2(7.029807, 7.029807)
-shape = SubResource("CircleShape2D_y6xsk")
+shape = SubResource("CapsuleShape2D_w6afd")
 debug_color = Color(1, 0, 0, 0.41960785)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1773455195]
-position = Vector2(449, 530)
+position = Vector2(425, 204.00003)
 scale = Vector2(3.529111, 3.529111)
 script = ExtResource("2_pxj2h")
 
@@ -38,8 +43,8 @@ shape = SubResource("CapsuleShape2D_pxj2h")
 debug_color = Color(0.2494027, 0.6358461, 0, 0.41960785)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1155586681]
-position = Vector2(626, 377)
-scale = Vector2(11.814509, 6.689096)
+position = Vector2(521.00006, 522)
+scale = Vector2(16.763199, 5.613729)
 script = ExtResource("2_g1n1i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1105995228]
@@ -73,7 +78,7 @@ rotation = 4.712389
 shape = SubResource("WorldBoundaryShape2D_y6xsk")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1234189158]
-position = Vector2(292, 228)
+position = Vector2(169, 252)
 physics_material_override = SubResource("PhysicsMaterial_pxj2h")
 script = ExtResource("3_vwgu3")
 
@@ -81,3 +86,7 @@ script = ExtResource("3_vwgu3")
 scale = Vector2(12.541496, 2.3537495)
 shape = SubResource("RectangleShape2D_w6afd")
 debug_color = Color(0.98445004, 0, 0.34792343, 0.41960785)
+
+[node name="static" parent="." unique_id=1743848203 instance=ExtResource("5_w6afd")]
+position = Vector2(516, 350)
+scale = Vector2(2.756583, 4.1528215)

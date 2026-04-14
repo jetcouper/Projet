@@ -9,11 +9,16 @@ bounce = 0.75
 
 [node name="Bird" type="RigidBody2D" unique_id=859989539]
 physics_material_override = SubResource("PhysicsMaterial_owhn0")
-script = ExtResource("1_g5k2s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1236549100]
 scale = Vector2(3.100465, 3.100465)
 shape = SubResource("CapsuleShape2D_g5k2s")
 debug_color = Color(0, 0.6, 0, 0.41960785)
 
+[node name="DPM_lancer" type="Node2D" parent="." unique_id=464525720 node_paths=PackedStringArray("rigidBody")]
+script = ExtResource("1_g5k2s")
+rigidBody = NodePath("..")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=731058733]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
