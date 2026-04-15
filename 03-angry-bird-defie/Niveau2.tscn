@@ -34,7 +34,7 @@ shape = SubResource("CapsuleShape2D_w6afd")
 debug_color = Color(1, 0, 0, 0.41960785)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1773455195]
-position = Vector2(425, 204.00003)
+position = Vector2(431.00003, 204.00005)
 scale = Vector2(3.529111, 3.529111)
 script = ExtResource("2_pxj2h")
 

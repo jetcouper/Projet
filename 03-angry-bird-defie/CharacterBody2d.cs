@@ -10,13 +10,17 @@ public partial class CharacterBody2d : CharacterBody2D
     private bool etaitSurSol = false;
     private bool peutSauter = false;
     private Timer jumpTimer = new Timer();
+    private Timer rushTimer = new Timer();
+    private bool isRushing = false;
 
     public override void _Ready()
     {
         base._Ready();
         GetTree().DebugCollisionsHint = true;
         AddChild(jumpTimer);
+        AddChild(rushTimer);
         jumpTimer.OneShot = true;
+        rushTimer.OneShot = true;
     }
 
     public override void _PhysicsProcess(double delta)
@@ -50,6 +54,18 @@ public partial class CharacterBody2d : CharacterBody2D
             jumpTimer.WaitTime = 0.5f;
             jumpTimer.Start();
             peutSauter = true;
+        }
+        if (Input.IsActionJustPressed("rush") && !isRushing)
+        {
+            isRushing = true;
+            rushTimer.WaitTime = 5.0f; // Durée de la rush
+            rushTimer.Start();
+            speed *= 2; // Double la vitesse pendant la rush
+        }
+        else if (rushTimer.IsStopped() && isRushing)
+        {
+            isRushing = false;
+            speed /= 2; // Réinitialise la vitesse après la rush
         }
         // Handle horizontal movement
         float direction = Input.GetAxis("ui_left", "ui_right");
