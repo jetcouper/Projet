@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://u0lhbr742q1j" path="res://Bird.cs" id="1_lp4gg"]
 [ext_resource type="Script" uid="uid://tapvj0002pdq" path="res://Graviter.cs" id="2_g1n1i"]
-[ext_resource type="Script" uid="uid://cx6uvtq1kv73c" path="res://CharacterBody2d.cs" id="2_pxj2h"]
+[ext_resource type="Script" uid="uid://cx6uvtq1kv73c" path="res://DPM_controlleur_personnage.cs" id="2_pxj2h"]
 [ext_resource type="Script" uid="uid://oqx2q2ivocu5" path="res://AnimatableBody2d.cs" id="3_vwgu3"]
 [ext_resource type="PackedScene" uid="uid://cf11meh1426ey" path="res://Scenes/Static.tscn" id="5_w6afd"]
 
@@ -34,7 +34,7 @@ shape = SubResource("CapsuleShape2D_w6afd")
 debug_color = Color(1, 0, 0, 0.41960785)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1773455195]
-position = Vector2(431.00003, 204.00005)
+position = Vector2(432, 204.00003)
 scale = Vector2(3.529111, 3.529111)
 script = ExtResource("2_pxj2h")
 
@@ -43,7 +43,7 @@ shape = SubResource("CapsuleShape2D_pxj2h")
 debug_color = Color(0.2494027, 0.6358461, 0, 0.41960785)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1155586681]
-position = Vector2(521.00006, 522)
+position = Vector2(523.00006, 522)
 scale = Vector2(16.763199, 5.613729)
 script = ExtResource("2_g1n1i")
 
