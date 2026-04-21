@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://1dbepo7g1l6l"]
+
+[ext_resource type="Texture2D" uid="uid://cgbww476to7q8" path="res://Particule/brackeys_vfx_bundle/brackeys_vfx_bundle/particles/alpha/star_02_a.png" id="1_qi410"]
+
+[sub_resource type="Gradient" id="Gradient_jpjfo"]
+offsets = PackedFloat32Array(0, 0.5416667, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.48235294, 0, 1, 1, 1, 1, 0)
+
+[node name="Explosion" type="CPUParticles2D" unique_id=1597367383]
+emitting = false
+amount = 20
+texture = ExtResource("1_qi410")
+lifetime = 0.45
+one_shot = true
+explosiveness = 0.85
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1500.0
+initial_velocity_max = 2000.0
+color_ramp = SubResource("Gradient_jpjfo")

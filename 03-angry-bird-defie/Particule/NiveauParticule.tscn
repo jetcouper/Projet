@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://blynucepu4t7c"]
+
+[ext_resource type="PackedScene" uid="uid://b6gixj2ep05b4" path="res://Particule/EffetFeuCheap.tscn" id="1_e4i3h"]
+[ext_resource type="PackedScene" uid="uid://1dbepo7g1l6l" path="res://Particule/explosion.tscn" id="2_e4i3h"]
+
+[node name="NiveauParticule" type="Node2D" unique_id=2105113038]
+
+[node name="CPUParticles2D" parent="." unique_id=1253991272 instance=ExtResource("1_e4i3h")]
+position = Vector2(4319, -2340)
+
+[node name="CPUParticles2D2" parent="." unique_id=1675166797 instance=ExtResource("1_e4i3h")]
+position = Vector2(5729, -3424)
+
+[node name="Explosion" parent="." unique_id=1597367383 instance=ExtResource("2_e4i3h")]

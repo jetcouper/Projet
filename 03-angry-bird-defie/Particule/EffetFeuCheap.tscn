@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b6gixj2ep05b4"]
+
+[ext_resource type="Texture2D" uid="uid://cnwrd8q77rhf8" path="res://Particule/brackeys_vfx_bundle/brackeys_vfx_bundle/particles/alpha/fire_02_a.png" id="1_l4i68"]
+
+[sub_resource type="Curve" id="Curve_e4i3h"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.20551449), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_cpctm"]
+offsets = PackedFloat32Array(0, 0.5104167, 1)
+colors = PackedColorArray(0.9372549, 0.34117648, 0, 1, 0.9372549, 0.7294118, 0.32156864, 1, 1, 1, 1, 0)
+
+[node name="CPUParticles2D" type="CPUParticles2D" unique_id=1253991272]
+amount = 50
+texture = ExtResource("1_l4i68")
+lifetime = 1.64
+direction = Vector2(0, -1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 743.25
+initial_velocity_max = 941.44
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_e4i3h")
+color_ramp = SubResource("Gradient_cpctm")
