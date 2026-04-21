@@ -19,6 +19,7 @@ public partial class DPM_controlleur_personnage : CharacterBody2D
     private Vector2 velocity = Vector2.Zero;
     private bool isFacingRight = true;
     private float lastVelocityX = 0f;
+    private float directionDash = 1f;
 
     public override void _Ready()
     {
@@ -58,7 +59,7 @@ public partial class DPM_controlleur_personnage : CharacterBody2D
 
         isPressingJumping = Input.IsActionJustPressed("ui_accept");
 
-        if (Input.IsActionJustPressed("dash") && !EstSurSol && !isDashing)
+        if (Input.IsActionJustPressed("dash") && !isDashing)
         {
             isDashing = true;
             dashTimer.WaitTime = 0.2f;
@@ -102,17 +103,22 @@ public partial class DPM_controlleur_personnage : CharacterBody2D
         if (!EstSurSol && !isDashing)
             velocity.Y += gravity * (float)delta;
 
+        float inputX = Input.GetAxis("ui_left", "ui_right");
+        if (inputX != 0)
+            directionDash = Mathf.Sign(inputX);
+
         // Dash (priorité sur le rush)
         if (isDashing)
         {
             velocity.Y = 0;
-            velocity.X = Input.GetAxis("ui_left", "ui_right") * speed * 3;
+            float dashDir = inputX != 0 ? inputX : directionDash;
+            velocity.X = dashDir * speed * 3;
         }
         // Rush
         else if (isRushing)
-            velocity.X = Input.GetAxis("ui_left", "ui_right") * speed * 2;
+            velocity.X = inputX * speed * 2;
         else
-            velocity.X = Input.GetAxis("ui_left", "ui_right") * speed;
+            velocity.X = inputX * speed;
 
         Velocity = velocity;
         MoveAndSlide();
