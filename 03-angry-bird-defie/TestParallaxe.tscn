@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dpaocr31ckc2y"]
+
+[ext_resource type="Texture2D" uid="uid://rgakvhbbcsl" path="res://Library/The Dawn/The Dawn/Layers/1.png" id="1_b7aq5"]
+[ext_resource type="Texture2D" uid="uid://cqe1244imarmq" path="res://Library/The Dawn/The Dawn/Layers/3.png" id="2_2ptod"]
+[ext_resource type="Texture2D" uid="uid://dbjw0n6cuqypd" path="res://icon.svg" id="2_jibqm"]
+[ext_resource type="Texture2D" uid="uid://345gpk2aw4op" path="res://Library/The Dawn/The Dawn/Layers/2.png" id="2_xvgy3"]
+[ext_resource type="Script" uid="uid://ciqtx4gugfdkn" path="res://Library/Util/SimplePlayer.cs" id="3_xvgy3"]
+[ext_resource type="Texture2D" uid="uid://drs33c8tjokli" path="res://Library/The Dawn/The Dawn/Layers/8.png" id="6_2ptod"]
+
+[node name="TestParallaxe" type="Node2D" unique_id=90711708]
+
+[node name="ArrierePlan" type="Node2D" parent="." unique_id=1539808210]
+
+[node name="CouleurUniforme" type="Parallax2D" parent="ArrierePlan" unique_id=1414831088]
+repeat_size = Vector2(1920, 1080)
+
+[node name="1" type="Sprite2D" parent="ArrierePlan/CouleurUniforme" unique_id=959356068]
+position = Vector2(1, -7)
+texture = ExtResource("1_b7aq5")
+centered = false
+
+[node name="Soleil" type="Parallax2D" parent="ArrierePlan" unique_id=904316248]
+scroll_scale = Vector2(0.1, 0.1)
+scroll_offset = Vector2(-4, 0)
+repeat_size = Vector2(1980, 0)
+
+[node name="2" type="Sprite2D" parent="ArrierePlan/Soleil" unique_id=669279136]
+position = Vector2(-2, -8)
+texture = ExtResource("2_xvgy3")
+centered = false
+
+[node name="Foret1" type="Parallax2D" parent="ArrierePlan" unique_id=1849540893]
+scroll_scale = Vector2(0.3, 0.3)
+scroll_offset = Vector2(-17, -5)
+repeat_size = Vector2(3960, 0)
+
+[node name="3" type="Sprite2D" parent="ArrierePlan/Foret1" unique_id=876841761]
+texture_repeat = 3
+position = Vector2(18, 264)
+texture = ExtResource("2_2ptod")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3960, 1080)
+
+[node name="Personnage" type="Sprite2D" parent="." unique_id=978055292]
+position = Vector2(513, 520)
+texture = ExtResource("2_jibqm")
+
+[node name="DPM_Simple_player" type="Node2D" parent="Personnage" unique_id=564822187 node_paths=PackedStringArray("NodeToControl")]
+script = ExtResource("3_xvgy3")
+NodeToControl = NodePath("..")
+VelocityPixelPerSecond = 300.0
+
+[node name="Camera2D" type="Camera2D" parent="Personnage" unique_id=267343864]
+position = Vector2(186, 129)
+
+[node name="AvantPlan" type="Node2D" parent="." unique_id=1785429860]
+
+[node name="Parallax2D" type="Parallax2D" parent="AvantPlan" unique_id=1484602395]
+scroll_scale = Vector2(1.2, 1.2)
+scroll_offset = Vector2(-6, -13)
+repeat_size = Vector2(990, 0)
+
+[node name="8" type="Sprite2D" parent="AvantPlan/Parallax2D" unique_id=1598484790]
+position = Vector2(-2, 366)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_2ptod")
+centered = false
